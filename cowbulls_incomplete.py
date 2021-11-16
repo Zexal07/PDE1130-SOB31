@@ -2,6 +2,14 @@ import random
 
 def compare_numbers(number, user_guess):
     ## your code here
+    cowbull = [0,0]
+    for i in range(len(number)):
+        if number[i] == user_guess[i]:
+            cowbull[1] += 1
+            print("The number ", str(user_guess[i]) + " at index " + str(i),"is correct")
+        else:
+            cowbull[0] += 1
+            print("The number ", str(user_guess[i]) + " at index " + str(i),"is incorrect")
     return cowbull
 
 playing = True #gotta play the game
@@ -11,13 +19,14 @@ print (number)
 
 print("Let's play a game of Cowbull!") #explanation
 print("I will generate a number, and you have to guess the numbers one digit at a time.")
-print("For every number that exists in the sequence but is in wrong place, you get a cow. For every one in the right place, you get a bull.")
+print("For every number that exists in the sequence but is in wrong place, you get a cow.")
+print("For every one in the right place, you get a bull.")
 print("The game ends when you get 4 bulls!")
 print("Type exit at any prompt to exit.")
 
 while playing:
-    user_guess = input("Give me your best guess!")
-    if user_guess == "exit":
+    user_guess = input("Give me your best guess!\n")
+    if user_guess.lower() == "exit":
         break
     cowbullcount = compare_numbers(number,user_guess)
     guesses+=1
@@ -26,7 +35,16 @@ while playing:
 
     if cowbullcount[1]==4:
         playing = False
-        print("You win the game after " + str(guesses) + "! The number was "+str(number))
+        print("You win the game after " + str(guesses) + " guesses! The number was "+str(number))
         break #redundant exit
     else:
         print("Your guess isn't quite right, try again.")
+        
+
+
+
+
+
+
+
+

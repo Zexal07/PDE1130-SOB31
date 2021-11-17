@@ -64,10 +64,10 @@ def add_piece(game, player, row, column):
     
     game: game_state
     player: player_number
-    row: 0-index_row
-    column: 0-index_column
+    row: 0 - index_row
+    column: 0 - index_column
     
-    game[row][column+1] = player
+    game[row][column] = player
     return game
 
 def check_space_empty(game, row, column):

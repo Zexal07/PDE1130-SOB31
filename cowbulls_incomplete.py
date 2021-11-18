@@ -12,6 +12,7 @@ def compare_numbers(number, user_guess):
             print("The number ", str(user_guess[i]) + " at index " + str(i),"is incorrect")
     return cowbull
 
+
 playing = True #gotta play the game
 number = str(random.randint(0,9999)) #random 4 digit number
 guesses = 0
